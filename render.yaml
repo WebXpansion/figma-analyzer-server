@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: figma-analyzer
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PUPPETEER_CACHE_DIR
+        value: /opt/render/project/.cache/puppeteer
+    autoDeploy: true
